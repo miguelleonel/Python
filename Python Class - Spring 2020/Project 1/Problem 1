@@ -1,0 +1,16 @@
+#Miguel Lopez
+#Milestone 1
+#Spring 2020 - EE 4953 - Dr. Kelley
+#Problem 1
+
+y=1
+hault = 0		        # Avoiding to use break/continue by using a 'hault' variable.
+                        # The if statement only runs while 'hault' is equal to 0. 
+for x in range(4,256,4):
+    if hault==0:
+        y = y*x
+        if y < 512:
+            print(y)
+        else:           # Once the y value exceeds 512, it will change the 'hault' variable to 1, 
+            hault = 1	# thus finishing the if statement.
+            
