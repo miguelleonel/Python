@@ -1,0 +1,20 @@
+#Miguel Lopez
+#Milestone 1
+#Spring 2020 - EE 4953 - Dr. Kelley
+#Problem 4
+
+fruits=["apple","orange","banana","tangerine", "avocado", "BananA", "BANAna"]
+
+def uniqueFruits(fruits):
+    unique = []                             # Creates a blank list variable named 'unique'.
+    for item in fruits:                     # for loop that goes through each element inside of 'fruits' list.
+        if item.lower() not in unique:      # Makes each tested item inside of fruits list to become lowercased.
+            unique.append(item.lower())     # Adds the lowercased element to the blank -
+                                            # 'unique' list if it isn't already included. [ie. unique].
+    return len(unique)                      # Returns the length of the unique list variable. 
+
+def displayFruits(fruits):
+    fruits.append('mango')                  # Adds the elemenet "mango" to the end of the fruits list.
+    print("There are", uniqueFruits(fruits), "unique fruits in the list containing ", fruits)
+    
+displayFruits(fruits)
