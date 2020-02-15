@@ -1,0 +1,39 @@
+#Miguel Lopez
+#Milestone 1
+#Spring 2020 - EE 4953 - Dr. Kelley
+#Problem 3
+
+students = {'11': {'name': 'Bob', 'grade': 2.5},		# This creates a nested dictionary named students. 
+            '21': {'name': 'Mary', 'grade': 3.5},		# The first key are the ID's 11, 21, 31, etc., and the -
+            '31': {'name': 'David', 'grade': 4.2},      # next keys are name and grade. 
+            '42': {'name': 'John', 'grade': 4.1},       # The values are the {} after the ID keys, -
+            '53': {'name': 'Alex', 'grade': 3.8}}       # but also the names and grades.
+            
+def averageGrade(students):                     # This function computes the average grade.
+    sum = 0.0                                   # Defines variable sum to a floating point type.
+    for key in students:
+        sum = sum + students[key]['grade']		# The for loop tests each first key inside of the students dictionary.
+    average = sum/len(students)				    # The sum is added for everyone's grade, then divided by the length -
+    return average					            # of the students dictionary. Function returns the average value.
+    
+def nameList(students):				
+    alpha=[]						            # Defines a blank list named alpha.
+    for key in students:
+        alpha.append(students[key]['name'])		# The names are taken from the dictionary and stored into 'alpha'.
+        alpha.sort()					        # The names are then sorted alphabetically.
+    print("The following is the list of students in alphabetical order:", ', '.join(alpha))			
+                                                # .join is used for concise output from a list
+def gradeList(students):
+    name=[]						                # Defines a blank list named 'name'
+    for item in sorted(students, key = lambda k: students[k]['grade']):	# Sorts the students dictionary based only on the grade key
+        newStudents=students[item]			    # Creating a new dictionary that is in the order given by line above
+        name.append(newStudents['name'])		# Takes the values from the 'name' key into the name list
+    name.reverse()					            # Reverses the order to desired order (high to low GPA)
+    print("The following is the list of students in order of GPA, highest to lowest:", ', '.join(name))
+                                                # .join is used for concise output from a list
+
+nameList(students)					            # Runs the functions.
+gradeList(students)
+
+average_grade = averageGrade(students)			# Assigns the return value from averageGrade function to variable average_grade
+print("The overall average of the students is", average_grade)	# Outputs text with average_grade variable.
