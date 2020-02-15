@@ -1,0 +1,10 @@
+#Miguel Lopez
+#Milestone 1
+#Spring 2020 - EE 4953 - Dr. Kelley
+#Problem 2
+
+fruits=["apple","orange","banana","mango"]
+
+for item in fruits:
+	if item !="banana":		# So long as the element being tested in the 'fruits' list is not banana, 
+		print(item)         # then it will print the element. 
